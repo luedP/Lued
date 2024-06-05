@@ -1,0 +1,15 @@
+/* searchbar.css */
+
+/* Estilo para el contenedor de la barra de búsqueda */
+.search-bar {
+    margin: 5px auto;
+    text-align: center;
+  }
+/* Estilo para el campo de entrada (input) */
+.search-bar input[type="text"] {
+    width: 150%; /* Ocupa todo el ancho del contenedor */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
