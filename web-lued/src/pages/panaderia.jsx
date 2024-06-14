@@ -1,18 +1,4 @@
-/* import React from 'react';
-import CardPanaderia from '../components/cardpanaderia/cardpanaderia'
 
-
-
-function Panaderia() {
-  return (
-    <div>
-      <h1>Catálogo de Panaderia</h1>
-      < CardPanaderia/>
-    </div>
-  );
-}
-
-export default Panaderia; */
 
 import React from 'react';
 import { useLocation } from 'react-router-dom';

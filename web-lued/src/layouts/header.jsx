@@ -1,19 +1,35 @@
 import { Link, NavLink } from "react-router-dom";
-import SearchBar from '../components/searchbar/searchbar'
+import { useContext } from 'react';
+import { SearchContext } from '../components/context/SearchContext';
+
 import './header.css'
 
 
 const Header = () => {
+  
+  const { setSearchQuery } = useContext(SearchContext);
+  
   const linkIsActive = (isActive) => {
     return isActive ? 'header__item-link header__item-link--is--active' : 'header__item-link'
   }  
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
   return (
     <header>
       <nav className="header">
         <NavLink to="/" className="header__logo">
           LUED
         </NavLink>
-        <SearchBar />
+        <div className='header__center'>
+        <input 
+          type="text" 
+          placeholder="Buscar..." 
+          onChange={handleSearch} 
+          className='header__search-bar'
+        />
+      </div>
+        
         <ul className="header__nav-list">
           <li className="header__list-item">
             <NavLink
