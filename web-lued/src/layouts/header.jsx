@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useContext } from 'react';
 import { SearchContext } from "../components/context/SearchContext";
 
-import './header.css'
+import './header.scss'
 
 
 const Header = () => {

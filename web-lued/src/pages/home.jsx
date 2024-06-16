@@ -1,29 +1,22 @@
-import React, { useContext } from 'react';
-import { SearchContext } from '../components/context/SearchContext';
+// HomePage.jsx
 
+import React from 'react';
+import CardHome from '../components/cardhome/cardhome'; // Ruta relativa al archivo CardHome.jsx
 
-const Home= () => {
-  const { searchTerm } = useContext(SearchContext);
-  const names = ['Alice', 'Bob', 'Charlie', 'David', 'Eve'];
-
-  const filteredNames = names.filter(name =>
-      name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
+const HomePage = () => {
   return (
-      <div>
-       
-          <h1>Home Page</h1>
-          <ul>
-              {filteredNames.map((name, index) => (
-                  <li key={index}>{name}</li>
-              ))}
-          </ul>
-      </div>
-  );
-};
+    <div className="container">
+      <h1 class="text-center">Bienvenidos a LUED</h1>
+      <p  class="text-center">¡Creamos pequeñas delicias, para grandes momentos!</p>
 
-export default Home;
+      {/* Incluir el componente CardHome */}
+      <CardHome />
+    </div>
+  );
+}
+
+export default HomePage;
+
 
 
 
