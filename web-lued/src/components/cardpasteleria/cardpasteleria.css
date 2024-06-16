@@ -1,50 +1,31 @@
 .catalogo {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  .producto {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 300px;
-    transition: transform 0.3s;
-  }
-  
-  .producto:hover {
-    transform: scale(1.05);
-  }
-  
-  .producto img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .producto h2 {
-    font-size: 1.5rem;
-    color: #333;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .producto p {
-    padding: 0 10px 10px;
-    color: #666;
-    text-align: center;
-  }
-  
-  .producto .precio {
-    font-size: 1.2rem;
-    color: #e91e63;
-    font-weight: bold;
-    padding: 10px;
-    text-align: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.seccion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.producto {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 200px;
+}
+
+.producto img {
+  max-width: 100%;
+  height: auto;
+}
+
+.precio {
+  font-weight: bold;
+  color: #333;
+}
