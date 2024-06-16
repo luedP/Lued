@@ -1,25 +1,21 @@
-// Menu.jsx
-import React, { useState } from 'react';
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import CardMenu from '../components/cardmenu/cardmenu';
 
 const Menu = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const location = useLocation();
+  const { state } = location;
+  const productosFiltrados = state ? state.productos : [];
 
   return (
     <div className="menu">
-      <button onClick={toggleMenu}>Abrir menú</button>
-      {isOpen && (
-        <ul className="menu-list">
-          <li>Inicio</li>
-          <li>Productos</li>
-          <li>Contacto</li>
-        </ul>
-      )}
+      <h1>Menú</h1>
+      <CardMenu productos={productosFiltrados} />
     </div>
   );
 };
 
 export default Menu;
+
+
+

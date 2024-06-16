@@ -6,8 +6,8 @@ import CardHome from '../components/cardhome/cardhome'; // Ruta relativa al arch
 const HomePage = () => {
   return (
     <div className="container">
-      <h1 class="text-center">Bienvenidos a LUED</h1>
-      <p  class="text-center">¡Creamos pequeñas delicias, para grandes momentos!</p>
+      <h1 className="text-center">Bienvenidos a LUED</h1>
+      <p  className="text-center">¡Creamos pequeñas delicias, para grandes momentos!</p>
 
       {/* Incluir el componente CardHome */}
       <CardHome />

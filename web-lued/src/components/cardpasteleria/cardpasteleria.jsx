@@ -9,7 +9,7 @@ const productos = [
     descripcion: 'Delicioso pastel de chocolate con cobertura de ganache.',
     precio: '$20.00',
     imagen: 'ruta/a/imagen-chocolate.jpg',
-    categoria: 'Pastelería'
+    categoria: 'Pasteles'
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const productos = [
     descripcion: 'Tarta de fresa fresca con crema pastelera.',
     precio: '$25.00',
     imagen: 'ruta/a/imagen-fresa.jpg',
-    categoria: 'Pastelería'
+    categoria: 'Pasteles'
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const productos = [
     descripcion: 'Clásico cheesecake con base de galleta.',
     precio: '$22.00',
     imagen: 'ruta/a/imagen-cheesecake.jpg',
-    categoria: 'Pastelería'
+    categoria: 'Pasteles'
   },
   {
     id: 4,
@@ -57,17 +57,17 @@ function CardPasteleria() {
     );
   };
 
-  const pasteleria = filterByCategory('Pastelería');
+  const pasteles = filterByCategory('Pasteles');
   const petit = filterByCategory('Petit');
   const rebanadas = filterByCategory('Rebanadas');
 
   return (
     <div className="catalogo">
-      {pasteleria.length > 0 && (
+      {pasteles.length > 0 && (
         <>
-          <h1>Pastelería</h1>
+          <h1>Pasteles</h1>
           <div className="seccion">
-            {pasteleria.map(producto => (
+            {pasteles.map(producto => (
               <div className="producto" key={producto.id}>
                 <img src={producto.imagen} alt={producto.nombre} />
                 <h2>{producto.nombre}</h2>
@@ -111,7 +111,7 @@ function CardPasteleria() {
         </>
       )}
 
-      {pasteleria.length === 0 && petit.length === 0 && rebanadas.length === 0 && (
+      {pasteles.length === 0 && petit.length === 0 && rebanadas.length === 0 && (
         <p>No se encontraron productos.</p>
       )}
     </div>
@@ -119,3 +119,4 @@ function CardPasteleria() {
 }
 
 export default CardPasteleria;
+
