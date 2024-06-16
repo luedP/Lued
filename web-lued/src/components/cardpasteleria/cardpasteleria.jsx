@@ -1,5 +1,6 @@
-import React from 'react';
-import './cardpasteleria.css'
+import React, { useContext } from 'react';
+import './cardpasteleria.css';
+import { SearchContext } from '../context/SearchContext'; // Asegúrate de importar desde el archivo correcto
 
 const productos = [
   {
@@ -27,9 +28,16 @@ const productos = [
 ];
 
 function CardPasteleria() {
+  const { searchTerm } = useContext(SearchContext);
+
+  // Función para filtrar los productos según el término de búsqueda
+  const filteredProductos = productos.filter(producto =>
+    producto.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="catalogo">
-      {productos.map(producto => (
+      {filteredProductos.map(producto => (
         <div className="producto" key={producto.id}>
           <img src={producto.imagen} alt={producto.nombre} />
           <h2>{producto.nombre}</h2>

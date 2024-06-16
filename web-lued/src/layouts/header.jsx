@@ -1,19 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from 'react';
-import { SearchContext } from '../components/context/SearchContext';
+import { SearchContext } from "../components/context/SearchContext";
 
 import './header.css'
 
 
 const Header = () => {
   
-  const { setSearchQuery } = useContext(SearchContext);
+  const { setSearchTerm } = useContext(SearchContext);
   
   const linkIsActive = (isActive) => {
     return isActive ? 'header__item-link header__item-link--is--active' : 'header__item-link'
   }  
   const handleSearch = (event) => {
-    setSearchQuery(event.target.value);
+    setSearchTerm(event.target.value);
   };
   return (
     <header>
