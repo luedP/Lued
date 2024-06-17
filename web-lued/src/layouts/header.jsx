@@ -1,14 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from 'react';
 import { SearchContext } from "../components/context/SearchContext";
-
 import './header.scss'
-
+import logo from '../layouts/Lued_Logo-.png'
 
 const Header = () => {
   
   const { setSearchTerm } = useContext(SearchContext);
-  
+
   const linkIsActive = (isActive) => {
     return isActive ? 'header__item-link header__item-link--is--active' : 'header__item-link'
   }  
@@ -18,9 +17,9 @@ const Header = () => {
   return (
     <header>
       <nav className="header">
-        <NavLink to="/" className="header__logo">
-          LUED
-        </NavLink>
+      <NavLink to="/" className="header__logo">
+      <img src={logo} alt="Logo de LUED" />
+    </NavLink>
         <div className='header__center'>
         <input 
           type="text" 

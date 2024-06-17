@@ -2,12 +2,16 @@
 
 import React from 'react';
 import CardHome from '../components/cardhome/cardhome'; // Ruta relativa al archivo CardHome.jsx
+import '../components/cardhome/CardHome.scss'; // Importa los estilos de CardHome.scss
 
 const HomePage = () => {
   return (
-    <div className="container">
-      <h1 className="text-center">Bienvenidos a LUED</h1>
-      <p  className="text-center">¡Creamos pequeñas delicias, para grandes momentos!</p>
+    <div >
+     <div className='container text-center'>
+      <h1 >Bienvenidos a LUED</h1>
+      <p >¡Creamos pequeñas delicias, para grandes momentos!</p>
+      </div> 
+     
 
       {/* Incluir el componente CardHome */}
       <CardHome />
@@ -16,6 +20,7 @@ const HomePage = () => {
 }
 
 export default HomePage;
+
 
 
 
