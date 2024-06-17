@@ -17,7 +17,7 @@ const productos = [
     nombre: 'Oreja',
     descripcion: 'Palmera de Masa de Hojaldre.',
     precio: '$25.00',
-    imagen: '/src/components/cardpanaderia/oreja.jfif',
+    imagen: '/src/components/cardpanaderia/oreja.jfif ',
     categoria: 'Panes Dulces'
   },
   {

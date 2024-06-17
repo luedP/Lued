@@ -17,3 +17,7 @@
   width: 300px;
   /* Estilos adicionales según necesidades */
 }
+.producto-card .precio {
+  margin-top: auto; /* Coloca el precio al final del contenedor */
+  font-weight: bold;
+}
