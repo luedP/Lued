@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import './cardpanaderia.css';
 import { SearchContext } from '../context/SearchContext'; // Asegúrate de importar desde la ruta correcta
+import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 
 const productos = [
   {
@@ -62,44 +63,73 @@ function CardPanaderia() {
 
   return (
     <div className="catalogo">
+      {/* Mostrar sección de Panes Dulces si hay productos */}
       {dulces.length > 0 && (
-        <>
+        <div className="categoria">
           <h1>Panes Dulces</h1>
           <div className="seccion">
             {dulces.map(producto => (
-              <div className="producto" key={producto.id}>
-                <img src={producto.imagen} alt={producto.nombre} />
-                <h2>{producto.nombre}</h2>
-                <p>{producto.descripcion}</p>
-                <p className="precio">{producto.precio}</p>
-              </div>
+              <Card key={producto.id} className="producto-card">
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={producto.imagen}
+                  alt={producto.nombre}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {producto.nombre}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {producto.descripcion}
+                  </Typography>
+                  <Typography variant="body1" className="precio">
+                    {producto.precio}
+                  </Typography>
+                </CardContent>
+              </Card>
             ))}
           </div>
-        </>
+        </div>
       )}
 
+      {/* Mostrar sección de Panes Salados si hay productos */}
       {salados.length > 0 && (
-        <>
+        <div className="categoria">
           <h1>Panes Salados</h1>
           <div className="seccion">
             {salados.map(producto => (
-              <div className="producto" key={producto.id}>
-                <img src={producto.imagen} alt={producto.nombre} />
-                <h2>{producto.nombre}</h2>
-                <p>{producto.descripcion}</p>
-                <p className="precio">{producto.precio}</p>
-              </div>
+              <Card key={producto.id} className="producto-card">
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={producto.imagen}
+                  alt={producto.nombre}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {producto.nombre}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {producto.descripcion}
+                  </Typography>
+                  <Typography variant="body1" className="precio">
+                    {producto.precio}
+                  </Typography>
+                </CardContent>
+              </Card>
             ))}
           </div>
-        </>
+        </div>
       )}
 
+      {/* Mostrar mensaje si no hay productos */}
       {dulces.length === 0 && salados.length === 0 && (
         <p>No se encontraron productos.</p>
       )}
     </div>
   );
-}
+};
 
 export default CardPanaderia;
 

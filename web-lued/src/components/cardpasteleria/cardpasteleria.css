@@ -1,31 +1,19 @@
 .catalogo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 20px;
+}
+
+.categoria {
+  margin-bottom: 20px;
 }
 
 .seccion {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  margin-bottom: 20px;
 }
 
-.producto {
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
-  max-width: 200px;
-}
-
-.producto img {
-  max-width: 100%;
-  height: auto;
-}
-
-.precio {
-  font-weight: bold;
-  color: #333;
+.producto-card {
+  width: 300px;
+  /* Estilos adicionales según necesidades */
 }
