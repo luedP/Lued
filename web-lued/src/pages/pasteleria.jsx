@@ -8,7 +8,7 @@ const Pasteleria = () => {
   const productosFiltrados = state ? state.productos : [];
 
   return (
-    <div>
+    <div className='container'>
       <h1>Catálogo de Pastelería</h1>
       <CardPasteleria productos={productosFiltrados} />
     </div>
