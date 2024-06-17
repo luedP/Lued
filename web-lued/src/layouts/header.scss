@@ -109,4 +109,34 @@
       }
     }
   }
+
+  .header__nav-list {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .header__list-item {
+    margin-right: 16px;
+  }
+  
+  .active-link {
+    text-decoration: none;
+  }
+  
+  .inactive-link {
+    text-decoration: none;
+  }
+  
+  .active-button {
+    background-color: #1976d2;
+    color: white;
+  }
+  
+  .inactive-button {
+    background-color: #e0e0e0;
+    color: black;
+  }
+  
   
