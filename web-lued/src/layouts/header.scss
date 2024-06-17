@@ -49,6 +49,24 @@
       }
     }
   }
+
+  // Media Queries para dispositivos más pequeños (ej. móviles)
+  @media (max-width: 768px) {
+    .header {
+      padding: 10px;
+    }
+
+    .header__center {
+      display: none; /* Oculta el centro en dispositivos pequeños */
+    }
+
+    .header__nav-list {
+      flex-direction: column;
+      gap: 10px;
+      margin-right: 0;
+    }
+  }
+
   
   // Estilos para el contenido general de la página
   .container {
