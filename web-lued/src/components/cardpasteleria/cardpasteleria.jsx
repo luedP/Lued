@@ -14,26 +14,26 @@ const productos = [
   },
   {
     id: 2,
-    nombre: 'Tarta de Fresa',
-    descripcion: 'Tarta de fresa fresca con crema pastelera.',
-    precio: '$25.00',
-    imagen: 'ruta/a/imagen-fresa.jpg',
-    categoria: 'Pasteles'
+    nombre: 'Madi Individual',
+    descripcion: '',
+    precio: '$80.00',
+    imagen: 'src/components/cardpasteleria/madi.png',
+    categoria: 'Petit'
   },
   {
     id: 3,
-    nombre: 'Cheesecake',
-    descripcion: 'Clásico cheesecake con base de galleta.',
-    precio: '$22.00',
-    imagen: 'ruta/a/imagen-cheesecake.jpg',
-    categoria: 'Pasteles'
+    nombre: 'CARIBBEAN',
+    descripcion: 'Biscocho de platano al ron añejo, Mousee de coco y gelle de maracuya.',
+    precio: '$80.00',
+    imagen: '/src/components/cardpasteleria/caribean.png',
+    categoria: 'Petit'
   },
   {
     id: 4,
-    nombre: 'Macarons',
-    descripcion: 'Pequeños bocados de cielo en diversos sabores.',
-    precio: '$15.00',
-    imagen: 'ruta/a/imagen-macarons.jpg',
+    nombre: 'Infinitamente-Pistache',
+    descripcion: 'genovesa de pistacho  bañado en 3 leches , mousse de pistacho , gelle de fresas, glaseado intenso de pistache y Rocher de pistache.',
+    precio: '$80.00',
+    imagen: 'src/components/cardpasteleria/infinititamente pistache.png', 
     categoria: 'Petit'
   },
   {
