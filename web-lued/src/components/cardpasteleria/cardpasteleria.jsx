@@ -47,7 +47,7 @@ const productos = [
   // Agrega más productos según sea necesario
 ];
 
-function CardPasteleria() {
+const CardPasteleria = () => {
   const { searchTerm } = useContext(SearchContext);
 
   // Función para filtrar los productos según el término de búsqueda y categoría
@@ -58,105 +58,52 @@ function CardPasteleria() {
     );
   };
 
-  // Filtrar productos por categoría
-  const pasteles = filterByCategory('Pasteles');
-  const petit = filterByCategory('Petit');
-  const rebanadas = filterByCategory('Rebanadas');
+  // Filtrar y renderizar productos por categoría si hay productos
+  const renderCategoria = (categoria) => {
+    const productosFiltrados = filterByCategory(categoria);
+    if (productosFiltrados.length > 0) {
+      return (
+        <div className="categoria" key={categoria}>
+          <h1>{categoria}</h1>
+          <div className="seccion">
+            {productosFiltrados.map(producto => (
+              <Card key={producto.id} className="producto-card">
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={producto.imagen}
+                  alt={producto.nombre}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {producto.nombre}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {producto.descripcion}
+                  </Typography>
+                  <Typography variant="body1" className="precio">
+                    {producto.precio}
+                  </Typography>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      );
+    }
+    return null;
+  };
+
+  // Lista de categorías
+  const categorias = ['Pasteles', 'Petit', 'Rebanadas'];
 
   return (
     <div className="catalogo">
-      {/* Mostrar sección de Pasteles si hay productos */}
-      {pasteles.length > 0 && (
-        <div className="categoria">
-          <h1>Pasteles</h1>
-          <div className="seccion">
-            {pasteles.map(producto => (
-              <Card key={producto.id} className="producto-card">
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={producto.imagen}
-                  alt={producto.nombre}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {producto.nombre}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {producto.descripcion}
-                  </Typography>
-                  <Typography variant="body1" className="precio">
-                    {producto.precio}
-                  </Typography>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Mostrar sección de Petit si hay productos */}
-      {petit.length > 0 && (
-        <div className="categoria">
-          <h1>Petit</h1>
-          <div className="seccion">
-            {petit.map(producto => (
-              <Card key={producto.id} className="producto-card">
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={producto.imagen}
-                  alt={producto.nombre}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {producto.nombre}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {producto.descripcion}
-                  </Typography>
-                  <Typography variant="body1" className="precio">
-                    {producto.precio}
-                  </Typography>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Mostrar sección de Rebanadas si hay productos */}
-      {rebanadas.length > 0 && (
-        <div className="categoria">
-          <h1>Rebanadas</h1>
-          <div className="seccion">
-            {rebanadas.map(producto => (
-              <Card key={producto.id} className="producto-card">
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={producto.imagen}
-                  alt={producto.nombre}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {producto.nombre}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {producto.descripcion}
-                  </Typography>
-                  <Typography variant="body1" className="precio">
-                    {producto.precio}
-                  </Typography>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      )}
+      {/* Renderizar categorías */}
+      {categorias.map(categoria => renderCategoria(categoria))}
 
       {/* Mostrar mensaje si no hay productos */}
-      {pasteles.length === 0 && petit.length === 0 && rebanadas.length === 0 && (
+      {productos.every(producto => !producto.nombre.toLowerCase().includes(searchTerm.toLowerCase())) && (
         <p>No se encontraron productos.</p>
       )}
     </div>
