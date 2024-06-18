@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import './cardpanaderia.css';
+import './cardpanaderia.css'; // Asegúrate de importar los estilos CSS adecuadamente
 import { SearchContext } from '../context/SearchContext'; // Asegúrate de importar desde la ruta correcta
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 
@@ -17,7 +17,7 @@ const productos = [
     nombre: 'Oreja',
     descripcion: 'Palmera de Masa de Hojaldre.',
     precio: '$25.00',
-    imagen: '/src/components/cardpanaderia/oreja.jfif ',
+    imagen: '/src/components/cardpanaderia/oreja.jfif',
     categoria: 'Panes Dulces'
   },
   {
@@ -47,83 +47,30 @@ const productos = [
   // Agrega más productos según sea necesario
 ];
 
-function CardPanaderia() {
+const CardPanaderia = () => {
   const { searchTerm } = useContext(SearchContext);
 
-  // Función para filtrar los productos según el término de búsqueda y categoría
-  const filterByCategory = (category) => {
+  // Función para filtrar los productos según la categoría y el término de búsqueda
+  const filterProducts = (category) => {
     return productos.filter(producto =>
       producto.categoria === category &&
       producto.nombre.toLowerCase().includes(searchTerm.toLowerCase())
     );
   };
 
-  const dulces = filterByCategory('Panes Dulces');
-  const salados = filterByCategory('Panes Salados');
+  // Filtrar productos por categorías
+  const dulces = filterProducts('Panes Dulces');
+  const salados = filterProducts('Panes Salados');
 
   return (
     <div className="catalogo">
-      {/* Mostrar sección de Panes Dulces si hay productos */}
-      {dulces.length > 0 && (
-        <div className="categoria">
-          <h1>Panes Dulces</h1>
-          <div className="seccion">
-            {dulces.map(producto => (
-              <Card key={producto.id} className="producto-card">
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={producto.imagen}
-                  alt={producto.nombre}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {producto.nombre}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {producto.descripcion}
-                  </Typography>
-                  <Typography variant="body1" className="precio">
-                    {producto.precio}
-                  </Typography>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      )}
+      {/* Mostrar categoría de Panes Dulces si hay productos */}
+      {renderCategoria(dulces, 'Panes Dulces')}
 
-      {/* Mostrar sección de Panes Salados si hay productos */}
-      {salados.length > 0 && (
-        <div className="categoria">
-          <h1>Panes Salados</h1>
-          <div className="seccion">
-            {salados.map(producto => (
-              <Card key={producto.id} className="producto-card">
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={producto.imagen}
-                  alt={producto.nombre}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {producto.nombre}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {producto.descripcion}
-                  </Typography>
-                  <Typography variant="body1" className="precio">
-                    {producto.precio}
-                  </Typography>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      )}
+      {/* Mostrar categoría de Panes Salados si hay productos */}
+      {renderCategoria(salados, 'Panes Salados')}
 
-      {/* Mostrar mensaje si no hay productos */}
+      {/* Mostrar mensaje si no hay productos en ninguna categoría */}
       {dulces.length === 0 && salados.length === 0 && (
         <p>No se encontraron productos.</p>
       )}
@@ -131,7 +78,43 @@ function CardPanaderia() {
   );
 };
 
+// Función para renderizar la categoría si hay productos
+const renderCategoria = (productos, categoria) => {
+  if (productos.length > 0) {
+    return (
+      <div className="categoria">
+        <h1>{categoria}</h1>
+        <div className="seccion">
+          {productos.map(producto => (
+            <Card key={producto.id} className="producto-card">
+              <CardMedia
+                component="img"
+                height="200"
+                image={producto.imagen}
+                alt={producto.nombre}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {producto.nombre}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {producto.descripcion}
+                </Typography>
+                <Typography variant="body1" className="precio">
+                  {producto.precio}
+                </Typography>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    );
+  }
+  return null; // Retornar null si no hay productos en la categoría
+};
+
 export default CardPanaderia;
+
 
 
 
