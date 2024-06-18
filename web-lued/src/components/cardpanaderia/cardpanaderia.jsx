@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import './cardpanaderia.css'; // Asegúrate de importar los estilos CSS adecuadamente
+import './cardpanaderia.scss'; // Asegúrate de importar los estilos CSS adecuadamente
 import { SearchContext } from '../context/SearchContext'; // Asegúrate de importar desde la ruta correcta
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 
@@ -50,7 +50,6 @@ const productos = [
 const CardPanaderia = () => {
   const { searchTerm } = useContext(SearchContext);
 
-  // Función para filtrar los productos según la categoría y el término de búsqueda
   const filterProducts = (category) => {
     return productos.filter(producto =>
       producto.categoria === category &&
@@ -58,19 +57,13 @@ const CardPanaderia = () => {
     );
   };
 
-  // Filtrar productos por categorías
   const dulces = filterProducts('Panes Dulces');
   const salados = filterProducts('Panes Salados');
 
   return (
     <div className="catalogo">
-      {/* Mostrar categoría de Panes Dulces si hay productos */}
       {renderCategoria(dulces, 'Panes Dulces')}
-
-      {/* Mostrar categoría de Panes Salados si hay productos */}
       {renderCategoria(salados, 'Panes Salados')}
-
-      {/* Mostrar mensaje si no hay productos en ninguna categoría */}
       {dulces.length === 0 && salados.length === 0 && (
         <p>No se encontraron productos.</p>
       )}
@@ -78,7 +71,6 @@ const CardPanaderia = () => {
   );
 };
 
-// Función para renderizar la categoría si hay productos
 const renderCategoria = (productos, categoria) => {
   if (productos.length > 0) {
     return (
@@ -110,17 +102,7 @@ const renderCategoria = (productos, categoria) => {
       </div>
     );
   }
-  return null; // Retornar null si no hay productos en la categoría
+  return null;
 };
 
 export default CardPanaderia;
-
-
-
-
-
-
-
-
-
-

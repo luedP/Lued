@@ -1,0 +1,60 @@
+.catalogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.categoria {
+  width: 100%;
+  margin-bottom: 40px;
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+  }
+  .seccion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+.producto-card {
+  width: 300px;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  .MuiCardContent-root {
+    padding: 16px;
+    text-align: center;
+    .MuiTypography-h5 {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #444;
+    }
+    .MuiTypography-body2 {
+      margin: 10px 0;
+      color: #666;
+    }
+    .precio {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #e91e63;
+      margin-top: auto; /* Alinear el precio en la parte inferior del card */
+    }
+  }
+}
