@@ -1,6 +1,6 @@
 // header.scss
 
-$primary-color: #ff69b4;
+$primary-color: #8d4467;
 $secondary-color: #ffffff;
 $hover-color: #f0f0f0;
 $border-color: #ccc;
@@ -15,7 +15,7 @@ $box-shadow-color: rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 8px $box-shadow-color;
 
   &__logo img {
-    height: 50px;
+    height:100px;
   }
 
   &__center {

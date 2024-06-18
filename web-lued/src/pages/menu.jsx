@@ -9,7 +9,7 @@ const Menu = () => {
 
   return (
     <div className="container">
-      <h1>Menú</h1>
+      
       <CardMenu productos={productosFiltrados} />
     </div>
   );

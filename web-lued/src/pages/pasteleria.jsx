@@ -9,7 +9,7 @@ const Pasteleria = () => {
 
   return (
     <div className='container'>
-      <h1>Catálogo de Pastelería</h1>
+      
       <CardPasteleria productos={productosFiltrados} />
     </div>
   );
