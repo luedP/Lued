@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useContext } from 'react';
 import { SearchContext } from "../components/context/SearchContext";
 import './header.scss';
-import logo from '../layouts/logo-blanco-sinfondo.png';
+import logo from '../layouts/Lued_Logo-.png'; 
 import { Button } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
