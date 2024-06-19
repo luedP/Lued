@@ -1,109 +1,54 @@
-// header.scss
-
-$primary-color: #8d4467;
-$secondary-color: #ffffff;
-$hover-color: #f0f0f0;
-$border-color: #ccc;
-$box-shadow-color: rgba(0, 0, 0, 0.1);
-
 .header {
   display: flex;
-  
-  justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  background-color: $primary-color;
-  box-shadow: 0 4px 8px $box-shadow-color;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #fff;
 
   &__logo img {
-    height:100px;
+    height: 50px;
   }
 
-  &__center {
-    flex: 1;
+  &__nav {
     display: flex;
-    justify-content: center;
-
-    .header__search-bar {
-      width: 100%;
-      max-width: 500px;  // Tamaño máximo del buscador
-      padding: 20px 80px;  // Ajuste del padding para un buscador más fino
-      margin: 20px 0;  // Ajuste de márgenes superior e inferior
-      border: 1px solid $border-color;
-      border-radius: 20px;
-      transition: all 0.3s ease;
-      background-color: $secondary-color;
-      font-size: 14px;  // Tamaño del texto
-  
-
-      &:focus {
-        border-color: $primary-color;
-        box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
-        outline: none;
-      }
-
-      &::placeholder {
-        color: $primary-color;
-      }
-    }
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
   }
 
   &__nav-list {
     display: flex;
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
+  }
 
-    .header__list-item {
-      margin-left: 20px;
+  &__list-item {
+    margin-right: 20px;
+  }
 
-      .header__item-link {
-        text-decoration: none;
-
-        &.header__item-link--is--active {
-          .MuiButton-root {
-            border: 2px solid $secondary-color;
-          }
-        }
-
-        .MuiButton-root {
-          transition: all 0.3s ease;
-          background-color: $secondary-color;
-          color: $primary-color;
-          border-radius: 20px;
-          padding: 5px 20px;
-
-          &:hover {
-            background-color: $hover-color;
-          }
-        }
-      }
+  &__item-link {
+    text-decoration: none;
+    color: #000;
+    &--is--active {
+      font-weight: bold;
+      color: pink;
     }
   }
-}
-// Agrega esto al final de tu archivo header.scss
 
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  background-color: $secondary-color;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px $box-shadow-color;
-}
+  &__search {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
 
-.card__title {
-  font-size: 18px;
-  color: $primary-color;
-  margin-bottom: 10px;
+  &__search-bar {
+    border: none;
+    margin-left: 10px;
+    outline: none;
+    font-size: 16px;
+  }
 }
-
-.card__description {
-  font-size: 14px;
-  color: #333;
-}
-
-  
