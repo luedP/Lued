@@ -10,7 +10,7 @@ function App() {
      <SearchProvider>
       <Header /> 
       <RoutesIndex />
-      </SearchProvider>
+     </SearchProvider>
     </>
   )
 }

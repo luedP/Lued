@@ -1,9 +1,15 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 10px 150px;
   background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 
   &__logo img {
     height: 50px;
@@ -30,6 +36,7 @@
   &__item-link {
     text-decoration: none;
     color: #000;
+
     &--is--active {
       font-weight: bold;
       color: pink;
@@ -43,12 +50,35 @@
     border: 1px solid #ddd;
     padding: 5px 10px;
     border-radius: 5px;
+
+    input[type="text"] {
+      border: none;
+      margin-left: 10px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    svg {
+      color: #888;
+    }
   }
 
-  &__search-bar {
-    border: none;
-    margin-left: 10px;
-    outline: none;
-    font-size: 16px;
+  .MuiButton-root {
+    color: pink;
+    background-color: #fff;
+    border: 1px solid pink;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 5px;
+
+    &:hover {
+      background-color: pink;
+      color: #fff;
+      border: 1px solid pink;
+    }
   }
 }
+.main-content {
+  margin-top: 70px; // Adjust this value based on the height of your header
+}
+
